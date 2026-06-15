@@ -9,7 +9,11 @@ import axios from 'axios'
 
 const rawApiUrl = import.meta.env.VITE_API_URL
 const api = axios.create({
-  baseURL: rawApiUrl ? (rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl}/api`) : '/api',
+  baseURL: rawApiUrl 
+    ? (rawApiUrl.endsWith('/api') 
+      ? rawApiUrl 
+      : `${rawApiUrl.replace(/\/$/, '')}/api`) 
+    : '/api',
   timeout: 120000,
   headers: { 'Content-Type': 'application/json' },
 })
