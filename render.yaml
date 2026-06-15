@@ -17,6 +17,10 @@ services:
     env: static
     buildCommand: "cd frontend && npm install && npm run build"
     staticPublishPath: frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
     envVars:
       # Inject the dynamically assigned backend URL into the frontend build
       - key: VITE_API_URL
