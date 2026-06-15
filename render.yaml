@@ -1,0 +1,26 @@
+services:
+  # ── Python Flask Backend ──────────────────────────────────────────────────
+  - type: web
+    name: house-price-backend
+    env: python
+    buildCommand: "cd backend && pip install -r requirements.txt"
+    startCommand: "cd backend && gunicorn app:app --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: FLASK_DEBUG
+        value: "false"
+
+  # ── React Vite Frontend ───────────────────────────────────────────────────
+  - type: web
+    name: house-price-frontend
+    env: static
+    buildCommand: "cd frontend && npm install && npm run build"
+    staticPublishPath: frontend/dist
+    envVars:
+      # Inject the dynamically assigned backend URL into the frontend build
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: house-price-backend
+          envVarKey: RENDER_EXTERNAL_URL

@@ -1,0 +1,51 @@
+{
+  "best_model": "Random Forest",
+  "models": [
+    {
+      "model": "Linear Regression",
+      "MAE": 19.8588,
+      "RMSE": 38.0086,
+      "R2": 0.8757
+    },
+    {
+      "model": "Decision Tree",
+      "MAE": 3.9093,
+      "RMSE": 15.8292,
+      "R2": 0.9784
+    },
+    {
+      "model": "Random Forest",
+      "MAE": 1.1148,
+      "RMSE": 5.3635,
+      "R2": 0.9975
+    },
+    {
+      "model": "Gradient Boosting",
+      "MAE": 1.7762,
+      "RMSE": 6.8176,
+      "R2": 0.996
+    },
+    {
+      "model": "XGBoost",
+      "MAE": 2.083,
+      "RMSE": 12.0928,
+      "R2": 0.9874
+    }
+  ],
+  "cv_r2_mean": 0.9778,
+  "cv_r2_std": 0.0309,
+  "feature_names": [
+    "total_sqft",
+    "bhk",
+    "bath",
+    "balcony",
+    "area_type_enc",
+    "location_mean_price",
+    "location_popularity",
+    "price_per_sqft",
+    "luxury_score"
+  ],
+  "train_size": 10410,
+  "test_size": 2603,
+  "city": "bengaluru"
+}

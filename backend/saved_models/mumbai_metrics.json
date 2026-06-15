@@ -1,0 +1,51 @@
+{
+  "best_model": "Gradient Boosting",
+  "models": [
+    {
+      "model": "Linear Regression",
+      "MAE": 80.0994,
+      "RMSE": 118.2901,
+      "R2": 0.9078
+    },
+    {
+      "model": "Decision Tree",
+      "MAE": 21.7342,
+      "RMSE": 54.305,
+      "R2": 0.9806
+    },
+    {
+      "model": "Random Forest",
+      "MAE": 9.6204,
+      "RMSE": 27.9125,
+      "R2": 0.9949
+    },
+    {
+      "model": "Gradient Boosting",
+      "MAE": 9.6837,
+      "RMSE": 21.9297,
+      "R2": 0.9968
+    },
+    {
+      "model": "XGBoost",
+      "MAE": 10.9612,
+      "RMSE": 25.1266,
+      "R2": 0.9958
+    }
+  ],
+  "cv_r2_mean": 0.9889,
+  "cv_r2_std": 0.0088,
+  "feature_names": [
+    "total_sqft",
+    "bhk",
+    "bath",
+    "balcony",
+    "area_type_enc",
+    "location_mean_price",
+    "location_popularity",
+    "price_per_sqft",
+    "luxury_score"
+  ],
+  "train_size": 2152,
+  "test_size": 538,
+  "city": "mumbai"
+}
